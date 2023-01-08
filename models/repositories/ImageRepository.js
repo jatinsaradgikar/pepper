@@ -1,5 +1,4 @@
 const Image = require('../Image');
-
 exports.postImage = async(body) => {
     try {
         let image = new Image({ 
@@ -14,7 +13,7 @@ exports.postImage = async(body) => {
 
 exports.getImageList = async(query) => {
     try {
-        return await Image.find(query);
+        return await Image.find();
     }catch (error) {
         throw new Error(error);
     }    

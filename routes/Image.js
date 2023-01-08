@@ -1,7 +1,7 @@
 const multer = require('multer');
 const storage = multer.memoryStorage();
 const { MulterError } = require('multer');
-const { postImage } = require("../controllers/Image");
+const { postImage, getImageList } = require("../controllers/Image");
 const express = require('express');
 const router = express.Router();
 
@@ -19,5 +19,7 @@ const upload = multer({
 });
 
 router.post('/upload', upload.single('image'), postImage);
+
+router.get('/', getImageList);
 
 module.exports = router;
